@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { ClassesService } from 'src/app/services/classes.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { ClassesService } from 'src/app/services/classes.service';
 })
 export class AddComponent  implements OnInit {
 
+  @Output() addValue = new EventEmitter();
   className: string = '';
 
   constructor(
@@ -20,6 +22,7 @@ export class AddComponent  implements OnInit {
     const newClass = { id: Date.now(), name: this.className };
     this.classesService.addClass(newClass);
     this.className = '';
+    this.addValue.emit(true);
   }
 
 }

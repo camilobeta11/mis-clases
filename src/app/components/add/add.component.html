@@ -4,6 +4,6 @@
     <ion-input label="Nombre de la clase:" [(ngModel)]="className" name="className" required></ion-input>
   </ion-item>
   <div class="container-button">
-    <ion-button class="centered-button">Agregar clase</ion-button>
+    <ion-button (click)="addClass()" class="centered-button">Agregar clase</ion-button>
   </div>
 </form>

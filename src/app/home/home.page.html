@@ -5,20 +5,26 @@
     </ion-title>
   </ion-toolbar>
   <ion-segment [value]="valueSegment">
-    <ion-segment-button value="view" (click)="valueSegment = 'view'">
-      <ion-label>Ver</ion-label>
+    <ion-segment-button value="list" (click)="valueSegment = 'list'">
+      <ion-label>Lista</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="delete" (click)="valueSegment = 'delete'">
+      <ion-label>Eliminar</ion-label>
     </ion-segment-button>
     <ion-segment-button value="add" (click)="valueSegment = 'add'">
       <ion-label>Agregar</ion-label>
     </ion-segment-button>
     <ion-segment-button value="edit" (click)="valueSegment = 'edit'">
-      <ion-label>Edit</ion-label>
+      <ion-label>Editar</ion-label>
     </ion-segment-button>
   </ion-segment>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list [ngSwitch]="valueSegment">
-    <app-add  *ngSwitchCase="'add'"></app-add>
+    <app-list *ngSwitchCase="'list'"></app-list>
+    <app-add  *ngSwitchCase="'add'" (addValue)="changeSegment($event)"></app-add>
+    <app-delete *ngSwitchCase="'delete'"></app-delete>
+
   </ion-list>
 </ion-content>
