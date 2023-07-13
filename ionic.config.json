@@ -1,0 +1,7 @@
+{
+  "name": "Mis Clases",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
