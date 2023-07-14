@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios">
+    <ion-title>Agregar clase</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="volver"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="addClass()" #myForm="ngForm">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input [(ngModel)]="class.name" name="name" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hora</ion-label>
+          <ion-select [(ngModel)]="schedule.time" name="time" required>
+            <ion-select-option value="8:00 AM">8:00 AM</ion-select-option>
+            <ion-select-option value="9:00 AM">9:00 AM</ion-select-option>
+            <ion-select-option value="10:00 AM">10:00 AM</ion-select-option>
+            <ion-select-option value="11:00 AM">11:00 AM</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <div class="container-button">
+          <ion-button type="submit" size="small" class="centered-button" [disabled]="!myForm.valid">Guardar</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
