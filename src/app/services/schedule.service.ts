@@ -10,10 +10,10 @@ export class ScheduleService {
 
   constructor() {
     this.schedules = [
-      { id: 1, classId: 1, time: '6:00 AM' },
-      { id: 2, classId: 2, time: '8:00 AM' },
+      { id: 1, classId: 1, time: '8:00 AM' },
+      { id: 2, classId: 2, time: '9:00 AM' },
       { id: 3, classId: 3, time: '10:00 AM' },
-      { id: 4, classId: 4, time: '2:00 AM' }
+      { id: 4, classId: 4, time: '11:00 AM' }
 
     ];
    }

@@ -1,17 +1,14 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar mode="ios">
     <ion-title>
-     Editar Clase {{classObj.id}}
+      Editar Clase {{classObj.id}}
     </ion-title>
-      <ion-icon name="close" slot="end" (click)="closeModal()"></ion-icon>
+    <ion-icon name="close" slot="end" (click)="closeModal()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-card>
-    <ion-card-header style="text-align: center;">
-      Editar Clase
-    </ion-card-header>
     <ion-card-content>
       <form (ngSubmit)="editClass()">
         <label>Nombre:</label>
@@ -21,6 +18,5 @@
         </div>
       </form>
     </ion-card-content>
-    </ion-card>
+  </ion-card>
 </ion-content>
-

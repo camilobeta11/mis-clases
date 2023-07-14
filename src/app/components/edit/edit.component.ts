@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+
 import { IClasses } from 'src/app/interfaces/interface';
 import { ToastService } from 'src/app/providers/toast.service';
 import { ClassesService } from 'src/app/services/classes.service';
@@ -12,7 +13,6 @@ import { ClassesService } from 'src/app/services/classes.service';
 export class EditComponent implements OnInit {
 
   @Input() classObj!: IClasses
-
 
   constructor(
     private classesService: ClassesService,
@@ -27,7 +27,6 @@ export class EditComponent implements OnInit {
     this.classesService.editClass(this.classObj.id, this.classObj);
     this.toastService.toast('Editado correctamente!');
     this.closeModal();
-
   }
 
   closeModal() {

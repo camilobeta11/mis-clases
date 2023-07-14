@@ -10,10 +10,10 @@ export class ClassesService {
 
   constructor() {
     this.classes = [
-      { id: 1, name: 'Matemática' },
-      { id: 2, name: 'Física' },
-      { id: 3, name: 'Química' },
-      { id: 4, name: 'Informática' }
+      { id: 1, name: 'matemática' },
+      { id: 2, name: 'física' },
+      { id: 3, name: 'química' },
+      { id: 4, name: 'informática' }
     ];
   }
 
@@ -22,7 +22,7 @@ export class ClassesService {
   }
 
   addClass(classObj: IClasses): void {
-    this.classes.push(classObj);
+    this.classes.unshift(classObj);
   }
 
   editClass(id: number, updatedClass: IClasses): void {

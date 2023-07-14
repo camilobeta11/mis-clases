@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { IClasses, ISchedule } from 'src/app/interfaces/interface';
+import { ToastService } from 'src/app/providers/toast.service';
 import { ClassesService } from 'src/app/services/classes.service';
 import { ScheduleService } from 'src/app/services/schedule.service';
 
@@ -24,7 +25,8 @@ export class AddPage implements OnInit {
   constructor(
     private classesService: ClassesService,
     private scheduleService: ScheduleService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private toastService: ToastService
   ) { }
 
   ngOnInit() {}
@@ -49,5 +51,6 @@ export class AddPage implements OnInit {
       time: ''
     };
     this.navCtrl.navigateForward('/home')
+    this.toastService.toast('Agregado correctamente!');
   }
 }

@@ -1,9 +1,9 @@
 <ion-header [translucent]="true">
-  <ion-buttons>
-    <ion-back-button defaultHref="/" text="volver"></ion-back-button>
-  </ion-buttons>
-  <ion-toolbar>
+  <ion-toolbar mode="ios">
     <ion-title>Agregar clase</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="volver"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -18,9 +18,10 @@
         <ion-item>
           <ion-label>Hora</ion-label>
           <ion-select [(ngModel)]="schedule.time" name="time" required>
-            <ion-select-option value="09:00">09:00</ion-select-option>
-            <ion-select-option value="10:00">10:00</ion-select-option>
-            <ion-select-option value="11:00">11:00</ion-select-option>
+            <ion-select-option value="8:00 AM">8:00 AM</ion-select-option>
+            <ion-select-option value="9:00 AM">9:00 AM</ion-select-option>
+            <ion-select-option value="10:00 AM">10:00 AM</ion-select-option>
+            <ion-select-option value="11:00 AM">11:00 AM</ion-select-option>
           </ion-select>
         </ion-item>
         <div class="container-button">
