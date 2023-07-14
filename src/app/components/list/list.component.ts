@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    const classes = this.classesService.getClasses();
+  this.classes = this.classesService.getClasses();
   }
 
   async alertDelete(id: number) {

@@ -29,11 +29,10 @@ export class AddPage implements OnInit {
     private toastService: ToastService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   addClass(): void {
     const newClass = { id: Date.now(), name: this.class.name };
-    console.log(newClass)
     this.classesService.addClass(newClass);
     this.class = {
       name: '',

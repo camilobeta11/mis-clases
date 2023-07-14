@@ -7,7 +7,6 @@ import { ListComponent } from './list/list.component';
 import { RouterModule } from '@angular/router';
 
 
-
 @NgModule({
   declarations: [
     EditComponent,

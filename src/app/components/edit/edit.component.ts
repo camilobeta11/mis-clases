@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
 import { IClasses } from 'src/app/interfaces/interface';
 import { ToastService } from 'src/app/providers/toast.service';
 import { ClassesService } from 'src/app/services/classes.service';

@@ -15,10 +15,14 @@
           <ion-row>
             <ion-col>
               <ion-button (click)="alertDelete(class.id)" color="danger" expand="block"
-                size="small">Eliminar</ion-button>
+                size="small">
+                Eliminar
+              </ion-button>
             </ion-col>
             <ion-col>
-              <ion-button (click)="openModalEdit(class)" color="success" expand="block" size="small">Editar</ion-button>
+              <ion-button (click)="openModalEdit(class)" color="success" expand="block" size="small">
+                Editar
+              </ion-button>
             </ion-col>
 
           </ion-row>
@@ -26,7 +30,9 @@
             <ion-item *ngFor="let schedule of getSchedulesByClass(class.id)">
               {{ schedule.time }}
               <ion-button [disabled]="getSchedulesByClass(class.id).length === 1" c color="danger" size="small"
-                slot="end" (click)="deleteSchedule(schedule.id)">Eliminar</ion-button>
+                slot="end" (click)="deleteSchedule(schedule.id)">
+                Eliminar
+              </ion-button>
             </ion-item>
             <ion-item style="display: none;">
               <ion-select [(ngModel)]="schedule.time" name="time" required #scheduleSelect
@@ -39,12 +45,9 @@
             </ion-item>
           </ion-list>
 
-          <ion-button color="primary" size="small" (click)="openSchedule(class.id)" expand="block">Agregar
-            Horario</ion-button>
-
-          <ion-text *ngIf="getSchedulesByClass(class.id).length === 0" color="medium">
-            No hay horarios disponibles.
-          </ion-text>
+          <ion-button color="primary" size="small" (click)="openSchedule(class.id)" expand="block">
+            Agregar Horario
+          </ion-button>
         </ion-card-content>
       </ion-card>
     </ion-col>

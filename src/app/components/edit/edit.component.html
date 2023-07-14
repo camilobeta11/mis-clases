@@ -11,8 +11,8 @@
   <ion-card>
     <ion-card-content>
       <form (ngSubmit)="editClass()">
-        <label>Nombre:</label>
-        <input [(ngModel)]="classObj.name" name="className" required>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="classObj.name" name="name" type="text" required></ion-input>
         <div class="container-button">
           <ion-button type="submit" size="small" class="centered-button">Guardar</ion-button>
         </div>
