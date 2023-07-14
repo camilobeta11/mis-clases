@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios">
+    <ion-title>Foto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="volver"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <img [src]="imageSrc || '../../../assets/icon/photo.png'" alt="Foto" class="centered-image">
+  </div></ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="takePicture()" style="margin: auto; display: block;" color="secondary">
+      <ion-icon slot="start" name="camera-outline"></ion-icon>
+      Tomar una foto
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
