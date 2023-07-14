@@ -10,12 +10,17 @@ export class ScheduleService {
 
   constructor() {
     this.schedules = [
-      { id: 1, classId: 1, time: '10:00 AM' },
-      { id: 2, classId: 2, time: '2:00 PM' },
-      { id: 3, classId: 1, time: '5:00 PM' }
+      { id: 1, classId: 1, time: '6:00 AM' },
+      { id: 2, classId: 2, time: '8:00 AM' },
+      { id: 3, classId: 3, time: '10:00 AM' },
+      { id: 4, classId: 4, time: '2:00 AM' }
+
     ];
    }
 
+   getSchedules() {
+    return this.schedules;
+  }
    getSchedulesByClass(classId: number): ISchedule[] {
     return this.schedules.filter(value => value.classId === classId);
   }
@@ -36,5 +41,8 @@ export class ScheduleService {
     if (index !== -1) {
       this.schedules.splice(index, 1);
     }
+  }
+  deleteSchedulesByClass(classId: number): void {
+    this.schedules = this.schedules.filter(schedule => schedule.classId !== classId);
   }
 }

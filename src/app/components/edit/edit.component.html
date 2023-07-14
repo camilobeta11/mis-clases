@@ -1,3 +1,26 @@
-<p>
-  edit works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     Editar Clase {{classObj.id}}
+    </ion-title>
+      <ion-icon name="close" slot="end" (click)="closeModal()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header style="text-align: center;">
+      Editar Clase
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="editClass()">
+        <label>Nombre:</label>
+        <input [(ngModel)]="classObj.name" name="className" required>
+        <div class="container-button">
+          <ion-button type="submit" size="small" class="centered-button">Guardar</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+    </ion-card>
+</ion-content>
+

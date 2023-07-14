@@ -10,9 +10,10 @@ export class ClassesService {
 
   constructor() {
     this.classes = [
-      { id: 1, name: 'Class 1' },
-      { id: 2, name: 'Class 2' },
-      { id: 3, name: 'Class 3' }
+      { id: 1, name: 'Matemática' },
+      { id: 2, name: 'Física' },
+      { id: 3, name: 'Química' },
+      { id: 4, name: 'Informática' }
     ];
   }
 

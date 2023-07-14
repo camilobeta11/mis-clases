@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ListComponent } from './list.component';
 
-describe('ListComponent', () => {
+describe('DeleteComponent', () => {
   let component: ListComponent;
   let fixture: ComponentFixture<ListComponent>;
 

@@ -1,31 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { DeleteComponent } from './delete/delete.component';
 import { ListComponent } from './list/list.component';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
-    AddComponent,
     EditComponent,
-    DeleteComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     CommonModule,
     IonicModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
-    AddComponent,
     EditComponent,
-    DeleteComponent,
-    ListComponent
+    ListComponent,
   ]
 })
 export class ComponentsModule { }
