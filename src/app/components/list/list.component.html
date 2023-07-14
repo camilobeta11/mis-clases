@@ -1,0 +1,55 @@
+<h2>Lista de Clases</h2>
+<ion-button style="margin-left: 30px;" color="primary" size="small" [routerLink]="['/add']"
+  routerLinkActive="router-link-active">
+  <ion-icon slot="start" name="add"></ion-icon>
+  Agregar
+</ion-button>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-sm="6" size-md="4" *ngFor="let class of classes">
+      <ion-card>
+        <ion-card-header>
+          {{ class.name | titlecase }}
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="alertDelete(class.id)" color="danger" expand="block"
+                size="small">
+                Eliminar
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="openModalEdit(class)" color="success" expand="block" size="small">
+                Editar
+              </ion-button>
+            </ion-col>
+
+          </ion-row>
+          <ion-list *ngIf="getSchedulesByClass(class.id).length > 0">
+            <ion-item *ngFor="let schedule of getSchedulesByClass(class.id)">
+              {{ schedule.time }}
+              <ion-button [disabled]="getSchedulesByClass(class.id).length === 1" c color="danger" size="small"
+                slot="end" (click)="deleteSchedule(schedule.id)">
+                Eliminar
+              </ion-button>
+            </ion-item>
+            <ion-item style="display: none;">
+              <ion-select [(ngModel)]="schedule.time" name="time" required #scheduleSelect
+                (ionChange)="onSelectChange($event)">
+                <ion-select-option value="8:00 AM">8:00 AM</ion-select-option>
+                <ion-select-option value="9:00 AM">9:00 AM</ion-select-option>
+                <ion-select-option value="10:00 AM">10:00 AM</ion-select-option>
+                <ion-select-option value="11:00 AM">11:00 AM</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+
+          <ion-button color="primary" size="small" (click)="openSchedule(class.id)" expand="block">
+            Agregar Horario
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
